@@ -1,14 +1,15 @@
 #include <iostream>
 #include <cstdlib>
+#include <cmath>
 
 using namespace std;
 
 int main ()
 {
 	int n = 0, k = 0, m = 0;
-	float eps_float = 1.0f, nul_checkf = 1.0f, nul_float,inf_positiv_float, inf_negativ_float;
-	double eps_double = 1.0, nul_checkd = 1.0, nul_double,inf_positiv_double, inf_negativ_double;
-	long double eps_ldouble = 1.0, nul_checkld = 1.0, nul_ldouble, inf_positiv_ldouble, inf_negativ_ldouble;
+	float eps_float = 1.0f, nul_checkf = 1.0f, nul_float, inf_positiv_float = 1, inf_negativ_float = 1;
+	double eps_double = 1.0, nul_checkd = 1.0, nul_double, inf_positiv_double = 1, inf_negativ_double = 1;
+	long double eps_ldouble = 1.0, nul_checkld = 1.0, nul_ldouble, inf_positiv_ldouble = 1, inf_negativ_ldouble = 1;
 
 
 	while (1.0f + eps_float != 1.0f)
@@ -65,12 +66,59 @@ int main ()
 	cout << '\t' << nul_ldouble - eps_ldouble << '\n'; 
 	cout << '\n';
 
-	inf_positiv_float = FLT_MAX;
-	inf_negativ_float = - FLT_MAX;
-	inf_positiv_double = DBL_MAX;
-	inf_negativ_double = - DBL_MAX;
-	inf_positiv_ldouble = LDBL_MAX;
-	inf_negativ_ldouble = - LDBL_MAX;
+	int counter_inf_pos_float = 0;
+	while(inf_positiv_float < pow(10, 10000))
+	{
+		counter_inf_pos_float = counter_inf_pos_float + 1;
+		inf_positiv_float = inf_positiv_float * 2.0f;
+	}
+	inf_positiv_float = pow(2, counter_inf_pos_float - 1);
+
+	int counter_inf_neg_float = 0;
+	while(inf_negativ_float > -pow(10, 10000))
+	{
+		inf_negativ_float = abs(inf_negativ_float);
+		counter_inf_neg_float = counter_inf_neg_float + 1;
+		inf_negativ_float = inf_negativ_float * (-2.0f);
+	}
+	inf_negativ_float = -pow(2, counter_inf_neg_float - 1);
+
+
+	int counter_inf_pos_double = 0;
+	while(inf_positiv_double < pow(10, 10000))
+	{
+		counter_inf_pos_double = counter_inf_pos_double + 1;
+		inf_positiv_double = inf_positiv_double * 2.0;
+	}
+	inf_positiv_double = pow(2, counter_inf_pos_double - 1);
+
+	int counter_inf_neg_double = 0;
+	while(inf_negativ_double > - pow(10, 10000))
+	{
+		inf_negativ_double = abs(inf_negativ_double);
+		counter_inf_neg_double = counter_inf_neg_double + 1;
+		inf_negativ_double = inf_negativ_double * (-2.0);
+	}
+	inf_negativ_double = - pow(2, counter_inf_neg_double - 1);
+
+
+	int counter_inf_pos_ldouble = 0;
+	while(inf_positiv_ldouble < pow(10, 10000))
+	{
+		counter_inf_pos_ldouble = counter_inf_pos_ldouble + 1;
+		inf_positiv_ldouble = inf_positiv_ldouble * 2.0;
+	}
+	inf_positiv_ldouble = pow(2, counter_inf_pos_ldouble - 1);
+
+	int counter_inf_neg_ldouble = 0;
+	while(inf_negativ_ldouble > - pow(10, 100000))
+	{
+		inf_negativ_ldouble = abs(inf_negativ_ldouble);
+		counter_inf_neg_ldouble = counter_inf_neg_ldouble + 1;
+		inf_negativ_ldouble = inf_negativ_ldouble * (-2.0);
+	}
+	inf_negativ_ldouble = - pow(2, counter_inf_neg_ldouble - 1);
+	
 
 	cout << "Machine infinity: \n";
 	cout << "float -> " << inf_positiv_float << '\n';
