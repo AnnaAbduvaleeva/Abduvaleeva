@@ -6,7 +6,7 @@
 *.sln
 *.vcxproj
 *.vcxproj.filters
-*.suo
+*.v11.suo
 # Игнорирование файла во ВСЕХ директориях
 # Например /params/db/config.php, /config.php
 # config.php
