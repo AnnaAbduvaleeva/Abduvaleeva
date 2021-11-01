@@ -7,6 +7,14 @@
 *.vcxproj
 *.vcxproj.filters
 *.v11.suo
+*.obj
+*.lastbuildstate
+*.log
+*.tlog
+*.idb
+*.pdb
+*.exe
+*.ilk
 # Игнорирование файла во ВСЕХ директориях
 # Например /params/db/config.php, /config.php
 # config.php
