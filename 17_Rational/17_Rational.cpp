@@ -9,11 +9,11 @@ private:
 	int numerator, denominator;
 
 public:
-	CRational()  //конструктор по умолчанию
+	CRational()  
 	{
         numerator = 1;
         denominator = 1;
-    }
+    	}
 
 	CRational (int num, int den)
 	{
@@ -50,7 +50,7 @@ public:
         int den = denominator * otherCRational.denominator;
 
 		return CRational(num, den).Reduce();
-    }
+  	}
 
 	CRational Reduce()
 	{
