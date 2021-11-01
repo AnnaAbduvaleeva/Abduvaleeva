@@ -9,7 +9,7 @@ private:
 	int numerator, denominator;
 
 public:
-	CRational()  //конструктор по умолчанию
+	CRational()  
 	{
         numerator = 1;
         denominator = 1;
