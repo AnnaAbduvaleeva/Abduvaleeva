@@ -19,20 +19,20 @@ public:
 		}
 
 		lenght = N;
-		array = new int[lenght];
+		array = new int[lenght]; // выделение динамической памяти
 	}
 
 	~FIFO()
 	{
-		delete[] array;
+		delete[] array; //освобождения памяти, выделенной оператором new
 	}
 
-	void push(int index, int number)
+	void push(int index, int number) //перемещение числа в контейнер
 	{
 		array[lenght - index - 1] = number;
 	}
 
-	void pop(int a)
+	void pop(int a) //извлеченние числа из контейнера
 	{
 		int j = 0;
 		while (j < lenght)
